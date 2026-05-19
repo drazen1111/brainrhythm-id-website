@@ -361,6 +361,77 @@
       font-weight: 700;
     }
 
+    .folder-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .folder {
+      border: 1px solid var(--border-strong);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.055);
+      overflow: hidden;
+      box-shadow: 0 18px 54px rgba(0, 0, 0, 0.16);
+    }
+
+    .folder summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 22px 24px;
+      background: linear-gradient(135deg, rgba(57, 168, 255, 0.16), rgba(157, 123, 255, 0.10));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .folder summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .folder summary::after {
+      content: "+";
+      flex: 0 0 auto;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    .folder[open] summary::after {
+      content: "−";
+    }
+
+    .folder summary strong {
+      display: block;
+      color: #fff;
+      font-size: 22px;
+      line-height: 1.2;
+      margin-bottom: 5px;
+    }
+
+    .folder summary em {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      font-style: normal;
+    }
+
+    .folder .rhythm-grid {
+      padding: 18px;
+    }
+
+    .rhythm-grid.compact .rhythm-card p {
+      margin-bottom: 10px;
+    }
+
     .cta {
       text-align: center;
       padding: 62px 22px 82px;
@@ -565,188 +636,205 @@
       <section id="situational-rhythms">
         <div class="section-heading">
           <div class="eyebrow">Situational Rhythms</div>
-          <h2>Personalized rhythms for real-life situations</h2>
-          <p>Each rhythm has a specific purpose: guiding your brain toward alpha calm, beta focus, theta inner processing, delta rest or REM-like creative processing.</p>
+          <h2>Choose the state you want to guide.</h2>
+          <p>Instead of scrolling through a long text, open the group that matches your current situation. Each folder contains personalized rhythm modes created from your BrainRhythm ID profile.</p>
         </div>
 
-        <div class="rhythm-grid">
-          <article class="card rhythm-card">
-            <h3>Before Meeting</h3>
-            <div class="tag-row"><span class="tag">Alpha calm</span><span class="tag">Beta focus</span><span class="tag">Communication</span></div>
-            <p>For the moments before a meeting, conversation, presentation, negotiation or important communication.</p>
-            <p>Designed for entering a state of calm mental readiness: calm enough not to react from nervousness, but active enough to think clearly and express yourself well.</p>
-            <p>Useful when you feel tension, scattered thoughts, low energy, performance pressure or nervousness before meeting other people.</p>
-          </article>
+        <div class="folder-list">
+          <details class="folder" open>
+            <summary>
+              <span>
+                <strong>Focus, performance and action</strong>
+                <em>Beta focus, activation, readiness, studying, meetings and sports.</em>
+              </span>
+            </summary>
+            <div class="rhythm-grid compact">
+              <article class="card rhythm-card">
+                <h3>Before Meeting</h3>
+                <div class="tag-row"><span class="tag">Alpha calm</span><span class="tag">Beta focus</span><span class="tag">Communication</span></div>
+                <p>For the moments before a meeting, conversation, presentation, negotiation or important communication.</p>
+                <p>Designed for entering a state of calm mental readiness: calm enough not to react from nervousness, but active enough to think clearly and express yourself well.</p>
+              </article>
 
-          <article class="card rhythm-card">
-            <h3>Calm Down / Wind Down</h3>
-            <div class="tag-row"><span class="tag">Alpha</span><span class="tag">Theta</span><span class="tag">Overactivation</span></div>
-            <p>For states of high inner activity, when the brain is still accelerated, the body is tense and thoughts are difficult to stop.</p>
-            <p>Designed for after a demanding day, emotional overload, conflict, work pressure, stress or moments when you feel “too switched on.”</p>
-            <p>The goal is a gradual shift from activated beta activity toward calmer alpha/theta patterns.</p>
-          </article>
+              <article class="card rhythm-card">
+                <h3>Deep Focus / Study</h3>
+                <div class="tag-row"><span class="tag">Beta focus</span><span class="tag">Study</span><span class="tag">Mental clarity</span></div>
+                <p>For studying, work, reading, analysis, programming, writing and tasks that require sustained attention.</p>
+                <p>The goal is a more active beta state with enough inner stability for focus to be sharp, but not nervous.</p>
+              </article>
 
-          <article class="card rhythm-card">
-            <h3>Confidence & Social Ease</h3>
-            <div class="tag-row"><span class="tag">Social ease</span><span class="tag">Inner safety</span><span class="tag">Presence</span></div>
-            <p>For situations where you want to feel more confident, natural and relaxed around other people.</p>
-            <p>Designed for social tension, inner stiffness, insecurity, overthinking or fear of being judged.</p>
-            <p>Useful before social events, conversations, meeting new people, public speaking or situations where you want to appear calmer and more self-assured.</p>
-          </article>
+              <article class="card rhythm-card">
+                <h3>Performance Mode</h3>
+                <div class="tag-row"><span class="tag">Beta performance</span><span class="tag">Reaction speed</span><span class="tag">Sharpness</span></div>
+                <p>For moments when you need mental sharpness, reaction speed, activation and strong performance.</p>
+                <p>Designed before demanding tasks, performances, presentations, exams, competitions or situations where you need to be mentally fast, precise and present.</p>
+              </article>
 
-          <article class="card rhythm-card">
-            <h3>Creative Flow</h3>
-            <div class="tag-row"><span class="tag">Theta</span><span class="tag">Alpha</span><span class="tag">Ideas</span></div>
-            <p>For creative work, writing, creating, ideas, planning, music, design and problem solving.</p>
-            <p>Designed for moments when you feel blocked, too rational, mentally rigid, empty or uninspired.</p>
-            <p>The goal is a shift toward more creative alpha/theta patterns, where the brain can more easily connect images, ideas, emotions and inner associations.</p>
-          </article>
+              <article class="card rhythm-card">
+                <h3>Sports Performance</h3>
+                <div class="tag-row"><span class="tag">Sports readiness</span><span class="tag">Beta focus</span><span class="tag">Pressure control</span></div>
+                <p>For moments before training, a match, competition or physical challenge.</p>
+                <p>The goal is a state of sports readiness: sharper beta focus, controlled energy, better timing, faster reaction and more explosive inner preparation.</p>
+              </article>
 
-          <article class="card rhythm-card">
-            <h3>Deep Fatigue Reset</h3>
-            <div class="tag-row"><span class="tag">Fatigue</span><span class="tag">Gentle restart</span><span class="tag">Stability</span></div>
-            <p>For deep inner exhaustion, when you do not feel just tired, but as if the whole system has slowed down.</p>
-            <p>Designed for heavy mental fatigue, an empty-battery feeling, slowness in the body and mind, heaviness and deep depletion.</p>
-            <p>This rhythm does not force sudden energy. The goal is a gentle shift toward a more stable rhythm, a clearer head and gradual restoration of inner functionality.</p>
-          </article>
+              <article class="card rhythm-card">
+                <h3>I Can Do This</h3>
+                <div class="tag-row"><span class="tag">Beta activation</span><span class="tag">Courage</span><span class="tag">Action</span></div>
+                <p>For moments when you need inner drive, courage and the feeling that you can begin.</p>
+                <p>Useful before challenges, decisions, new steps, tasks you keep postponing or situations where you need to feel: “I can do this.”</p>
+              </article>
 
-          <article class="card rhythm-card">
-            <h3>Deep Recovery Support</h3>
-            <div class="tag-row"><span class="tag">Meditative recovery</span><span class="tag">Theta</span><span class="tag">Inner work</span></div>
-            <p>For a meditative state in which you want to use directed thoughts to activate an inner recovery process during difficult states, deep exhaustion or long-term life burden.</p>
-            <p>This is not a simple relaxation rhythm. It is designed for the moment when you want to lie down, close your eyes, calm the system and consciously direct your thoughts toward the body, renewal, regeneration and the return of inner strength.</p>
-            <p>The rhythm moves toward deeper alpha/theta patterns, where the mind is calmer, more receptive and better suited for inner work.</p>
-            <p>It is not a replacement for medical care, but rhythmic support for a meditative state in which a person wants to actively participate in their own recovery process.</p>
-          </article>
+              <article class="card rhythm-card">
+                <h3>Motivation Reset</h3>
+                <div class="tag-row"><span class="tag">Beta drive</span><span class="tag">Start action</span><span class="tag">Momentum</span></div>
+                <p>For moments when you know what you need to do, but you cannot begin.</p>
+                <p>Useful before work, studying, training, cleaning, creative tasks or any activity you keep delaying.</p>
+              </article>
+            </div>
+          </details>
 
-          <article class="card rhythm-card">
-            <h3>Deep Focus / Study</h3>
-            <div class="tag-row"><span class="tag">Beta focus</span><span class="tag">Study</span><span class="tag">Mental clarity</span></div>
-            <p>For studying, work, reading, analysis, programming, writing and tasks that require sustained attention.</p>
-            <p>Designed for moments when you need stable focus, clearer thinking and the ability to stay mentally present without constant attention shifts.</p>
-            <p>The goal is a more active beta state with enough inner stability for focus to be sharp, but not nervous.</p>
-          </article>
+          <details class="folder">
+            <summary>
+              <span>
+                <strong>Calm, stress and emotional balance</strong>
+                <em>Alpha/theta settling, nervous tension, emotional overload and stress reset.</em>
+              </span>
+            </summary>
+            <div class="rhythm-grid compact">
+              <article class="card rhythm-card">
+                <h3>Calm Down / Wind Down</h3>
+                <div class="tag-row"><span class="tag">Alpha</span><span class="tag">Theta</span><span class="tag">Overactivation</span></div>
+                <p>For states of high inner activity, when the brain is still accelerated, the body is tense and thoughts are difficult to stop.</p>
+                <p>The goal is a gradual shift from activated beta activity toward calmer alpha/theta patterns.</p>
+              </article>
 
-          <article class="card rhythm-card">
-            <h3>Emotional Balance</h3>
-            <div class="tag-row"><span class="tag">Alpha</span><span class="tag">Theta</span><span class="tag">Emotional stability</span></div>
-            <p>For moments when emotions feel scattered, heavy, irritable or unstable.</p>
-            <p>Designed for after an emotionally difficult conversation, stress, disappointment, inner tension or a day when emotions pull you in different directions.</p>
-            <p>The goal is a shift from emotional chaos toward a more stable alpha/theta rhythm, calmer clarity and a stronger sense of inner balance.</p>
-          </article>
+              <article class="card rhythm-card">
+                <h3>Stress Reset</h3>
+                <div class="tag-row"><span class="tag">Stress overload</span><span class="tag">Reset</span><span class="tag">Calmer clarity</span></div>
+                <p>For moments when the nervous system is overloaded — after stress, pressure, conflict, mental chaos or emotional saturation.</p>
+                <p>Useful when you want to reset the system before stress fully takes control.</p>
+              </article>
 
-          <article class="card rhythm-card">
-            <h3>I Can Do This</h3>
-            <div class="tag-row"><span class="tag">Beta activation</span><span class="tag">Courage</span><span class="tag">Action</span></div>
-            <p>For moments when you need inner drive, courage and the feeling that you can begin.</p>
-            <p>Designed for states of doubt, stiffness, procrastination, insecurity or the moment when you know what you need to do, but you cannot get yourself moving.</p>
-            <p>Useful before challenges, decisions, new steps, tasks you keep postponing or situations where you need to feel: “I can do this.”</p>
-          </article>
+              <article class="card rhythm-card">
+                <h3>Nervous Tension Relief</h3>
+                <div class="tag-row"><span class="tag">Nervousness</span><span class="tag">Alpha/theta settling</span><span class="tag">Inner control</span></div>
+                <p>For states of excessive inner energy, such as nervousness, inner tension, irritability, impulsiveness or aggressive charge.</p>
+                <p>The goal is a shift from over-arousal toward a calmer alpha/theta rhythm, better inner control and a safer feeling of settling down.</p>
+              </article>
 
-          <article class="card rhythm-card">
-            <h3>Low Mood Support</h3>
-            <div class="tag-row"><span class="tag">Low inner energy</span><span class="tag">Emotional lift</span><span class="tag">Reconnection</span></div>
-            <p>For states of low inner energy, such as depressive moods, emotional heaviness, emptiness, lack of will or a feeling of inner drop.</p>
-            <p>Designed for moments when you feel disconnected from yourself, emotionally tired, without inner movement or as if your internal energy has dropped.</p>
-            <p>The goal is a shift from low activation toward greater inner stability, a gentle rise in energy and a feeling of reconnecting with yourself.</p>
-            <p>It is not intended as a medical treatment, but as rhythmic support for moments when you want to move out of a heavy inner state.</p>
-          </article>
+              <article class="card rhythm-card">
+                <h3>Emotional Balance</h3>
+                <div class="tag-row"><span class="tag">Alpha</span><span class="tag">Theta</span><span class="tag">Emotional stability</span></div>
+                <p>For moments when emotions feel scattered, heavy, irritable or unstable.</p>
+                <p>The goal is a shift from emotional chaos toward a more stable alpha/theta rhythm, calmer clarity and a stronger sense of inner balance.</p>
+              </article>
 
-          <article class="card rhythm-card">
-            <h3>Metabolic Balance Support</h3>
-            <div class="tag-row"><span class="tag">Regulation</span><span class="tag">Energy balance</span><span class="tag">Body rhythm</span></div>
-            <p>For states of inner imbalance, changing energy, heaviness in the body, appetite swings or the feeling that the system is not working steadily.</p>
-            <p>Designed for supporting a more stable inner rhythm, a calmer relationship with the body and better energy regulation.</p>
-            <p>Useful when you feel slowed down, stress-sensitive, heavy after meals or when your energy fluctuates too much during the day.</p>
-          </article>
+              <article class="card rhythm-card">
+                <h3>Recovery / After Stress</h3>
+                <div class="tag-row"><span class="tag">After stress</span><span class="tag">Alpha/theta</span><span class="tag">Recovery</span></div>
+                <p>For the state after stress, when the event may be over, but the body and brain remain tense.</p>
+                <p>Useful when stress is no longer an external event, but a state that stayed in the body, thoughts and nervous system.</p>
+              </article>
 
-          <article class="card rhythm-card">
-            <h3>Morning Activation</h3>
-            <div class="tag-row"><span class="tag">Activation</span><span class="tag">Morning clarity</span><span class="tag">Drive</span></div>
-            <p>For morning slowness, mental fog, low energy or the feeling that the brain has not fully switched on yet.</p>
-            <p>Designed for when you wake up slowly, feel heavy, unfocused or need too much time to get started.</p>
-            <p>The goal is a gradual shift from a slower morning state toward clearer activation, wakefulness and presence.</p>
-          </article>
+              <article class="card rhythm-card">
+                <h3>Confidence & Social Ease</h3>
+                <div class="tag-row"><span class="tag">Social ease</span><span class="tag">Inner safety</span><span class="tag">Presence</span></div>
+                <p>For situations where you want to feel more confident, natural and relaxed around other people.</p>
+                <p>Useful before social events, conversations, meeting new people, public speaking or situations where you want to appear calmer and more self-assured.</p>
+              </article>
+            </div>
+          </details>
 
-          <article class="card rhythm-card">
-            <h3>Motivation Reset</h3>
-            <div class="tag-row"><span class="tag">Beta drive</span><span class="tag">Start action</span><span class="tag">Momentum</span></div>
-            <p>For moments when you know what you need to do, but you cannot begin.</p>
-            <p>Designed for inner blocks, lack of will, mental resistance, procrastination or the feeling that there is no movement inside.</p>
-            <p>Useful before work, studying, training, cleaning, creative tasks or any activity you keep delaying.</p>
-          </article>
+          <details class="folder">
+            <summary>
+              <span>
+                <strong>Low energy, recovery and body support</strong>
+                <em>Low mood, fatigue, recovery, pain perception, metabolic and weight balance support.</em>
+              </span>
+            </summary>
+            <div class="rhythm-grid compact">
+              <article class="card rhythm-card">
+                <h3>Low Mood Support</h3>
+                <div class="tag-row"><span class="tag">Low inner energy</span><span class="tag">Emotional lift</span><span class="tag">Reconnection</span></div>
+                <p>For states of low inner energy, such as depressive moods, emotional heaviness, emptiness, lack of will or a feeling of inner drop.</p>
+                <p>It is not intended as a medical treatment, but as rhythmic support for moments when you want to move out of a heavy inner state.</p>
+              </article>
 
-          <article class="card rhythm-card">
-            <h3>Nervous Tension Relief</h3>
-            <div class="tag-row"><span class="tag">Nervousness</span><span class="tag">Alpha/theta settling</span><span class="tag">Inner control</span></div>
-            <p>For states of excessive inner energy, such as nervousness, inner tension, irritability, impulsiveness or aggressive charge.</p>
-            <p>Designed for moments when the system feels too switched on, the body is restless, reactions are too fast and inner pressure is difficult to control.</p>
-            <p>The goal is a shift from over-arousal toward a calmer alpha/theta rhythm, better inner control and a safer feeling of settling down.</p>
-          </article>
+              <article class="card rhythm-card">
+                <h3>Deep Fatigue Reset</h3>
+                <div class="tag-row"><span class="tag">Fatigue</span><span class="tag">Gentle restart</span><span class="tag">Stability</span></div>
+                <p>For deep inner exhaustion, when you do not feel just tired, but as if the whole system has slowed down.</p>
+                <p>This rhythm does not force sudden energy. The goal is a gentle shift toward a more stable rhythm, a clearer head and gradual restoration of inner functionality.</p>
+              </article>
 
-          <article class="card rhythm-card">
-            <h3>Pain Relief Support</h3>
-            <div class="tag-row"><span class="tag">Body perception</span><span class="tag">Release</span><span class="tag">Calmer state</span></div>
-            <p>For moments when physical discomfort, pain, tension or exhaustion from pain takes up too much space in awareness.</p>
-            <p>Designed for moments when the brain becomes too fixed on physical discomfort and the body becomes guarded, tight or tense.</p>
-            <p>The goal is not medical pain treatment, but helping the brain move from tense focus on pain toward a calmer, more relaxed and more controlled state.</p>
-          </article>
+              <article class="card rhythm-card">
+                <h3>Deep Recovery Support</h3>
+                <div class="tag-row"><span class="tag">Meditative recovery</span><span class="tag">Theta</span><span class="tag">Inner work</span></div>
+                <p>For a meditative state in which you want to use directed thoughts to activate an inner recovery process during difficult states, deep exhaustion or long-term life burden.</p>
+                <p>It is designed for the moment when you want to lie down, close your eyes, calm the system and consciously direct your thoughts toward the body, renewal, regeneration and the return of inner strength.</p>
+                <p>It is not a replacement for medical care, but rhythmic support for a meditative state in which a person wants to actively participate in their own recovery process.</p>
+              </article>
 
-          <article class="card rhythm-card">
-            <h3>Performance Mode</h3>
-            <div class="tag-row"><span class="tag">Beta performance</span><span class="tag">Reaction speed</span><span class="tag">Sharpness</span></div>
-            <p>For moments when you need mental sharpness, reaction speed, activation and strong performance.</p>
-            <p>Designed before demanding tasks, performances, presentations, exams, competitions or situations where you need to be mentally fast, precise and present.</p>
-            <p>The goal is a shift toward a more active beta state — readiness, decisiveness, focus and faster processing.</p>
-          </article>
+              <article class="card rhythm-card">
+                <h3>Pain Relief Support</h3>
+                <div class="tag-row"><span class="tag">Body perception</span><span class="tag">Release</span><span class="tag">Calmer state</span></div>
+                <p>For moments when physical discomfort, pain, tension or exhaustion from pain takes up too much space in awareness.</p>
+                <p>The goal is not medical pain treatment, but helping the brain move from tense focus on pain toward a calmer, more relaxed and more controlled state.</p>
+              </article>
 
-          <article class="card rhythm-card">
-            <h3>Recovery / After Stress</h3>
-            <div class="tag-row"><span class="tag">After stress</span><span class="tag">Alpha/theta</span><span class="tag">Recovery</span></div>
-            <p>For the state after stress, when the event may be over, but the body and brain remain tense.</p>
-            <p>Designed for after conflict, pressure, emotional shock, a demanding day or a situation that pushed you out of balance.</p>
-            <p>Useful when stress is no longer an external event, but a state that stayed in the body, thoughts and nervous system.</p>
-          </article>
+              <article class="card rhythm-card">
+                <h3>Metabolic Balance Support</h3>
+                <div class="tag-row"><span class="tag">Regulation</span><span class="tag">Energy balance</span><span class="tag">Body rhythm</span></div>
+                <p>For states of inner imbalance, changing energy, heaviness in the body, appetite swings or the feeling that the system is not working steadily.</p>
+                <p>Designed for supporting a more stable inner rhythm, a calmer relationship with the body and better energy regulation.</p>
+              </article>
 
-          <article class="card rhythm-card">
-            <h3>Romantic / Intimacy</h3>
-            <div class="tag-row"><span class="tag">Date readiness</span><span class="tag">Presence</span><span class="tag">Emotional opening</span></div>
-            <p>For moments before a romantic meeting, a date, meeting a new girl, or any situation where you want to feel more relaxed, confident and natural in closeness.</p>
-            <p>Designed for moments when you feel nervousness, inner stiffness, distraction, too much mental control or fear that you will not seem relaxed enough.</p>
-            <p>The goal is a shift toward a softer alpha/theta state, with gentle activation, stronger body presence and easier emotional opening toward another person.</p>
-          </article>
+              <article class="card rhythm-card">
+                <h3>Weight Balance Support</h3>
+                <div class="tag-row"><span class="tag">Appetite balance</span><span class="tag">Motivation</span><span class="tag">Steady energy</span></div>
+                <p>For supporting steadier energy, appetite, motivation and a healthier inner rhythm.</p>
+                <p>It is not a “weight loss program,” but rhythmic support when you want to move more easily out of heaviness, low will, unstable energy or impulsive cravings.</p>
+              </article>
+            </div>
+          </details>
 
-          <article class="card rhythm-card">
-            <h3>Sleep Preparation</h3>
-            <div class="tag-row"><span class="tag">Theta</span><span class="tag">Delta</span><span class="tag">Sleep transition</span></div>
-            <p>For the evening transition from a wakeful, mentally active state toward a slower rhythm suitable for sleep.</p>
-            <p>Designed for when you are too awake, mentally busy, restless, tense or when the body wants to sleep but the brain is still running too fast.</p>
-            <p>The goal is to reduce mental speed and gradually move closer to calmer theta/delta patterns.</p>
-          </article>
+          <details class="folder">
+            <summary>
+              <span>
+                <strong>Creativity, intimacy and daily transitions</strong>
+                <em>Creative flow, romantic presence, morning activation and sleep preparation.</em>
+              </span>
+            </summary>
+            <div class="rhythm-grid compact">
+              <article class="card rhythm-card">
+                <h3>Creative Flow</h3>
+                <div class="tag-row"><span class="tag">Theta</span><span class="tag">Alpha</span><span class="tag">Ideas</span></div>
+                <p>For creative work, writing, creating, ideas, planning, music, design and problem solving.</p>
+                <p>The goal is a shift toward more creative alpha/theta patterns, where the brain can more easily connect images, ideas, emotions and inner associations.</p>
+              </article>
 
-          <article class="card rhythm-card">
-            <h3>Sports Performance</h3>
-            <div class="tag-row"><span class="tag">Sports readiness</span><span class="tag">Beta focus</span><span class="tag">Pressure control</span></div>
-            <p>For moments before training, a match, competition or physical challenge.</p>
-            <p>Designed for when you want mental readiness, better reaction, stability under pressure and controlled activation before performance.</p>
-            <p>The goal is a state of sports readiness: sharper beta focus, controlled energy, better timing, faster reaction and more explosive inner preparation.</p>
-          </article>
+              <article class="card rhythm-card">
+                <h3>Romantic / Intimacy</h3>
+                <div class="tag-row"><span class="tag">Date readiness</span><span class="tag">Presence</span><span class="tag">Emotional opening</span></div>
+                <p>For moments before a romantic meeting, a date, meeting a new girl, or any situation where you want to feel more relaxed, confident and natural in closeness.</p>
+                <p>The goal is a shift toward a softer alpha/theta state, with gentle activation, stronger body presence and easier emotional opening toward another person.</p>
+              </article>
 
-          <article class="card rhythm-card">
-            <h3>Stress Reset</h3>
-            <div class="tag-row"><span class="tag">Stress overload</span><span class="tag">Reset</span><span class="tag">Calmer clarity</span></div>
-            <p>For moments when the nervous system is overloaded — after stress, pressure, conflict, mental chaos or emotional saturation.</p>
-            <p>Designed for when stress is no longer just a thought, but a state of the whole system: the body is tense, thoughts are accelerated and the inner space feels crowded.</p>
-            <p>Useful when you want to reset the system before stress fully takes control.</p>
-          </article>
+              <article class="card rhythm-card">
+                <h3>Morning Activation</h3>
+                <div class="tag-row"><span class="tag">Activation</span><span class="tag">Morning clarity</span><span class="tag">Drive</span></div>
+                <p>For morning slowness, mental fog, low energy or the feeling that the brain has not fully switched on yet.</p>
+                <p>The goal is a gradual shift from a slower morning state toward clearer activation, wakefulness and presence.</p>
+              </article>
 
-          <article class="card rhythm-card">
-            <h3>Weight Balance Support</h3>
-            <div class="tag-row"><span class="tag">Appetite balance</span><span class="tag">Motivation</span><span class="tag">Steady energy</span></div>
-            <p>For supporting steadier energy, appetite, motivation and a healthier inner rhythm.</p>
-            <p>Designed for moments when you feel low motivation, heaviness, changing energy, impulsive cravings or weaker inner drive to care for the body.</p>
-            <p>It is not a “weight loss program,” but rhythmic support when you want to move more easily out of heaviness, low will, unstable energy or impulsive cravings.</p>
-          </article>
+              <article class="card rhythm-card">
+                <h3>Sleep Preparation</h3>
+                <div class="tag-row"><span class="tag">Theta</span><span class="tag">Delta</span><span class="tag">Sleep transition</span></div>
+                <p>For the evening transition from a wakeful, mentally active state toward a slower rhythm suitable for sleep.</p>
+                <p>The goal is to reduce mental speed and gradually move closer to calmer theta/delta patterns.</p>
+              </article>
+            </div>
+          </details>
         </div>
       </section>
 
