@@ -50,6 +50,27 @@
       line-height: 1.65;
     }
 
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image: url("brainrhythm_id_logo.png");
+      background-repeat: no-repeat;
+      background-position: center 18%;
+      background-size: min(82vw, 980px);
+      opacity: 0.026;
+    }
+
+    nav,
+    header,
+    main,
+    footer {
+      position: relative;
+      z-index: 1;
+    }
+
     a { color: inherit; text-decoration: none; }
 
     .nav {
@@ -134,14 +155,14 @@
 
     h1 {
       margin: 0 0 20px;
-      font-size: clamp(42px, 7vw, 76px);
+      font-size: clamp(40px, 5.8vw, 62px);
       line-height: 0.96;
       letter-spacing: -2.6px;
     }
 
     .lead {
       margin: 0 0 18px;
-      font-size: clamp(20px, 3vw, 28px);
+      font-size: clamp(19px, 2.4vw, 25px);
       line-height: 1.28;
       color: #ffffff;
       font-weight: 760;
@@ -155,55 +176,31 @@
     }
 
     .hero-panel {
-      padding: 26px;
+      padding: 24px;
       border: 1px solid var(--border-strong);
       border-radius: 32px;
       background:
-        radial-gradient(circle at 30% 5%, rgba(127, 211, 255, 0.22), transparent 14rem),
-        linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.045));
+        radial-gradient(circle at 50% 35%, rgba(127, 211, 255, 0.14), transparent 15rem),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.04));
       box-shadow: 0 26px 70px var(--shadow);
       overflow: hidden;
-    }
-
-    .pulse-orb {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      margin: 14px auto 24px;
-      background:
-        radial-gradient(circle, #ffffff 0%, var(--soft) 22%, var(--primary) 45%, rgba(157, 123, 255, 0.42) 72%, transparent 73%);
-      box-shadow: 0 0 44px rgba(57, 168, 255, 0.70), 0 0 100px rgba(157, 123, 255, 0.28);
-      animation: pulse 4.5s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(0.96); opacity: 0.86; }
-      50% { transform: scale(1.05); opacity: 1; }
-    }
-
-    .state-strip {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+      place-items: center;
+      min-height: 330px;
     }
 
-    .state-pill {
-      padding: 12px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.075);
-      border: 1px solid rgba(255, 255, 255, 0.10);
-    }
-
-    .state-pill strong {
+    .hero-logo {
+      width: min(100%, 390px);
+      height: auto;
       display: block;
-      color: var(--soft);
-      font-size: 13px;
-      margin-bottom: 2px;
+      filter: drop-shadow(0 0 34px rgba(57, 168, 255, 0.28));
     }
 
-    .state-pill span {
-      font-size: 12px;
-      color: var(--muted);
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 10px rgba(57, 168, 255, 0.45));
     }
 
     section {
@@ -228,7 +225,7 @@
 
     h2 {
       margin: 0 0 14px;
-      font-size: clamp(30px, 4.6vw, 50px);
+      font-size: clamp(28px, 3.8vw, 42px);
       line-height: 1.07;
       letter-spacing: -1.2px;
     }
@@ -383,32 +380,198 @@
     }
 
     @media (max-width: 640px) {
+      body {
+        line-height: 1.55;
+      }
+
+      .nav {
+        position: sticky;
+      }
+
       .nav-inner {
-        align-items: flex-start;
+        align-items: stretch;
         flex-direction: column;
+        gap: 10px;
+        padding: 12px 14px;
+      }
+
+      .brand {
+        font-size: 15px;
+      }
+
+      .brand-mark {
+        width: 28px;
+        height: 28px;
       }
 
       .nav-links {
+        display: flex;
+        flex-wrap: nowrap;
         justify-content: flex-start;
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 4px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-links a {
+        flex: 0 0 auto;
+        font-size: 12px;
+        padding: 7px 10px;
+        background: rgba(255, 255, 255, 0.055);
+        border: 1px solid rgba(255, 255, 255, 0.08);
       }
 
       .hero {
-        padding-top: 42px;
+        grid-template-columns: 1fr;
+        padding: 34px 16px 24px;
+        gap: 22px;
+      }
+
+      .kicker {
+        font-size: 12px;
+        margin-bottom: 14px;
       }
 
       h1 {
-        letter-spacing: -1.6px;
+        font-size: 44px;
+        letter-spacing: -1.4px;
+        margin-bottom: 14px;
+      }
+
+      .lead {
+        font-size: 21px;
+        line-height: 1.25;
+        margin-bottom: 12px;
+      }
+
+      .sub {
+        font-size: 15.5px;
+        line-height: 1.55;
+      }
+
+      .hero-panel {
+        min-height: auto;
+        padding: 16px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.045);
+      }
+
+      .hero-logo {
+        width: min(82vw, 270px);
+      }
+
+      .brand-logo {
+        width: 28px;
+        height: 28px;
+      }
+
+      body::before {
+        background-size: 120vw;
+        background-position: center 10%;
+        opacity: 0.020;
+      }
+
+      section {
+        padding: 30px 16px;
+      }
+
+      .section-heading {
+        margin-bottom: 16px;
+      }
+
+      .eyebrow {
+        font-size: 11px;
+        letter-spacing: 1.3px;
+        margin-bottom: 8px;
+      }
+
+      h2 {
+        font-size: 30px;
+        letter-spacing: -0.8px;
+        line-height: 1.08;
+      }
+
+      h3 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 15px;
       }
 
       .portal-grid,
-      .state-strip {
+      .mini-section-grid {
         grid-template-columns: 1fr;
+        gap: 12px;
       }
 
-      .pulse-orb {
-        width: 145px;
-        height: 145px;
+      .portal-card {
+        min-height: auto;
+        padding: 18px 18px 46px;
+        border-radius: 22px;
       }
+
+      .portal-card strong {
+        font-size: 20px;
+        margin-bottom: 8px;
+      }
+
+      .portal-card span {
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .portal-card::after {
+        right: 18px;
+        bottom: 14px;
+      }
+
+      .highlight-box,
+      .mini-section,
+      .download-box {
+        padding: 20px;
+        border-radius: 24px;
+      }
+
+      .highlight-box p {
+        font-size: 15.5px;
+      }
+
+      .button-row {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .button {
+        width: 100%;
+        padding: 13px 16px;
+      }
+
+      footer {
+        padding: 22px 16px 32px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      h1 {
+        font-size: 38px;
+      }
+
+      .lead {
+        font-size: 19px;
+      }
+
+      h2 {
+        font-size: 27px;
+      }
+
+
     }
   </style>
 
@@ -429,7 +592,7 @@
   <nav class="nav" aria-label="Main navigation">
     <div class="nav-inner">
       <a class="brand" href="index.html" aria-label="BrainRhythm ID home">
-        <span class="brand-mark" aria-hidden="true"></span>
+        <img class="brand-logo" src="brainrhythm_id_logo.png" alt="" />
         <span>BrainRhythm ID</span>
       </a>
       <div class="nav-links">
@@ -451,14 +614,8 @@
       <p class="sub">The app helps you discover your personal brain rhythm profile — the rhythms in which your brain enters different states and performs different tasks.</p>
     </div>
 
-    <aside class="hero-panel" aria-label="Brain rhythm states overview">
-      <div class="pulse-orb" aria-hidden="true"></div>
-      <div class="state-strip">
-        <div class="state-pill"><strong>Alpha</strong><span>Calm stability</span></div>
-        <div class="state-pill"><strong>Beta</strong><span>Focus and action</span></div>
-        <div class="state-pill"><strong>Theta</strong><span>Inner processing</span></div>
-        <div class="state-pill"><strong>Delta / REM</strong><span>Rest and deep imagery</span></div>
-      </div>
+    <aside class="hero-panel" aria-label="BrainRhythm ID logo">
+      <img class="hero-logo" src="brainrhythm_id_logo.png" alt="BrainRhythm ID logo" />
     </aside>
   </header>
 
