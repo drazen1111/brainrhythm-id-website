@@ -361,6 +361,58 @@
       font-weight: 700;
     }
 
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 34px;
+    }
+
+    .quick-card {
+      display: block;
+      min-height: 150px;
+      padding: 22px;
+      border-radius: 26px;
+      border: 1px solid var(--border-strong);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(127, 211, 255, 0.18), transparent 12rem),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.05));
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .quick-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(127, 211, 255, 0.72);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(127, 211, 255, 0.26), transparent 12rem),
+        linear-gradient(145deg, rgba(57, 168, 255, 0.16), rgba(157, 123, 255, 0.09));
+    }
+
+    .quick-card strong {
+      display: block;
+      color: #fff;
+      font-size: 20px;
+      line-height: 1.18;
+      margin-bottom: 10px;
+    }
+
+    .quick-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .small-heading {
+      margin-top: 12px;
+      margin-bottom: 18px;
+    }
+
+    .small-heading h2 {
+      font-size: clamp(24px, 3vw, 34px);
+    }
+
     .folder-list {
       display: grid;
       gap: 18px;
@@ -495,7 +547,8 @@
 
       .state-grid,
       .steps-grid,
-      .rhythm-grid {
+      .rhythm-grid,
+      .quick-grid {
         grid-template-columns: 1fr;
       }
 
@@ -636,12 +689,36 @@
       <section id="situational-rhythms">
         <div class="section-heading">
           <div class="eyebrow">Situational Rhythms</div>
-          <h2>Choose the state you want to guide.</h2>
-          <p>Instead of scrolling through a long text, open the group that matches your current situation. Each folder contains personalized rhythm modes created from your BrainRhythm ID profile.</p>
+          <h2>Choose what you need right now.</h2>
+          <p>This is the practical part of BrainRhythm ID. Start with the situation, then open only the group you need.</p>
+        </div>
+
+        <div class="quick-grid" aria-label="Rhythm category shortcuts">
+          <a class="quick-card" href="#focus-folder">
+            <strong>Focus & Performance</strong>
+            <span>Study, meetings, sports, action, confidence.</span>
+          </a>
+          <a class="quick-card" href="#calm-folder">
+            <strong>Calm & Emotional Balance</strong>
+            <span>Stress, nervous tension, emotional overload.</span>
+          </a>
+          <a class="quick-card" href="#recovery-folder">
+            <strong>Recovery & Low Energy</strong>
+            <span>Low mood, fatigue, pain perception, body support.</span>
+          </a>
+          <a class="quick-card" href="#creative-folder">
+            <strong>Creativity & Daily Transitions</strong>
+            <span>Creative flow, intimacy, morning and sleep.</span>
+          </a>
+        </div>
+
+        <div class="section-heading small-heading">
+          <h2>Open a rhythm folder</h2>
+          <p>The explanations are grouped below so the page does not feel like one long text.</p>
         </div>
 
         <div class="folder-list">
-          <details class="folder" open>
+          <details class="folder" id="focus-folder">
             <summary>
               <span>
                 <strong>Focus, performance and action</strong>
@@ -693,7 +770,7 @@
             </div>
           </details>
 
-          <details class="folder">
+          <details class="folder" id="calm-folder">
             <summary>
               <span>
                 <strong>Calm, stress and emotional balance</strong>
@@ -745,7 +822,7 @@
             </div>
           </details>
 
-          <details class="folder">
+          <details class="folder" id="recovery-folder">
             <summary>
               <span>
                 <strong>Low energy, recovery and body support</strong>
@@ -798,7 +875,7 @@
             </div>
           </details>
 
-          <details class="folder">
+          <details class="folder" id="creative-folder">
             <summary>
               <span>
                 <strong>Creativity, intimacy and daily transitions</strong>
