@@ -250,13 +250,15 @@
       box-shadow: 0 22px 60px rgba(0, 0, 0, 0.20);
     }
 
-    .category-grid {
+    .category-grid,
+    .rhythm-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 18px;
     }
 
-    .category-card {
+    .category-card,
+    .rhythm-card {
       border-radius: 28px;
       border: 1px solid var(--border);
       background:
@@ -264,6 +266,15 @@
         rgba(255, 255, 255, 0.075);
       padding: 24px;
       box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+    }
+
+    .rhythm-card h3 {
+      font-size: 18px;
+    }
+
+    .rhythm-card p {
+      font-size: 14.5px;
+      line-height: 1.48;
     }
 
     .rhythm-list {
@@ -320,7 +331,8 @@
     }
 
     @media (max-width: 900px) {
-      .category-grid {
+      .category-grid,
+      .rhythm-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -429,7 +441,8 @@
       }
 
       .wide-card,
-      .category-card {
+      .category-card,
+      .rhythm-card {
         padding: 20px;
         border-radius: 24px;
       }
@@ -558,20 +571,158 @@
     </section>
 
     <section>
+      <div class="section-heading">
+        <div class="eyebrow">All Situational Rhythms</div>
+        <h2>Each rhythm has a specific purpose.</h2>
+        <p>Below, every situational rhythm is explained separately, but still grouped by the same practical categories so the page stays clear and easy to read.</p>
+      </div>
+
       <div class="wide-card">
-        <div class="eyebrow">Deep Recovery Support</div>
-        <h2>A rhythm for directed inner recovery work.</h2>
-        <p>Deep Recovery Support is not just simple relaxation. It is intended for a meditative state where you lie down, calm the system and use directed thoughts to support an inner recovery process.</p>
-        <p>This can be useful during difficult states, deep exhaustion, long-term burden or moments when you want to turn attention toward the body, renewal, regeneration and return of inner strength.</p>
+        <div class="eyebrow">Focus & Performance</div>
+        <h2>For clarity, action, confidence and task preparation</h2>
+        <div class="rhythm-grid">
+          <div class="rhythm-card">
+            <h3>Deep Focus / Study</h3>
+            <p>For study, reading, learning, programming or concentrated work. The goal is sustained attention, clearer mental direction and reduced distraction.</p>
+          </div>
+
+          <div class="rhythm-card">
+            <h3>Performance Mode</h3>
+            <p>For situations where you need to perform, speak, act or react clearly. The goal is focused activation without unnecessary tension.</p>
+          </div>
+
+          <div class="rhythm-card">
+            <h3>Before Meeting</h3>
+            <p>For preparation before a meeting, conversation, presentation or important social moment. The goal is calm alertness, clearer presence and less inner tension.</p>
+          </div>
+
+          <div class="rhythm-card">
+            <h3>I Can Do This</h3>
+            <p>For moments before action when you need courage, initiative and inner permission to begin. The goal is stronger self-trust and forward movement.</p>
+          </div>
+
+          <div class="rhythm-card">
+            <h3>Morning Activation</h3>
+            <p>For starting the day with more clarity and activation. The goal is to move from sleep inertia or slow mood into a more awake state.</p>
+          </div>
+
+          <div class="rhythm-card">
+            <h3>Sports Performance</h3>
+            <p>For physical preparation, training, movement or competition. The goal is alertness, readiness, body connection and controlled activation.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section>
       <div class="wide-card">
-        <div class="eyebrow">Romantic / Intimacy</div>
-        <h2>A rhythm for relaxed confidence in closeness.</h2>
-        <p>Romantic / Intimacy is designed for moments before a romantic meeting, a date, meeting a new girl, or any situation where you want to feel more relaxed, confident and natural in closeness.</p>
-        <p>The goal is not artificial excitement. The goal is a softer, more natural state with less tension and more ease in connection.</p>
+        <div class="eyebrow">Calm & Emotional Balance</div>
+        <h2>For stress, nervous tension, emotional overload and social ease</h2>
+        <div class="rhythm-grid">
+          <div class="rhythm-card">
+            <h3>Stress Reset</h3>
+            <p>For acute stress, pressure or mental overload. The goal is a clearer reset from tension toward a more usable, regulated state.</p>
+          </div>
+
+          <div class="rhythm-card">
+            <h3>Nervous Tension Relief</h3>
+            <p>For nervousness, irritability, inner pressure or excessive charge. The goal is to soften overactivation and support calmer self-control.</p>
+          </div>
+
+          <div class="rhythm-card">
+            <h3>Emotional Balance</h3>
+            <p>For moments when emotions feel unstable, intense or scattered. The goal is a more centered state and a smoother return to inner balance.</p>
+          </div>
+
+          <div class="rhythm-card">
+            <h3>Calm Down / Wind Down</h3>
+            <p>For slowing down after activity, pressure or mental overload. The goal is to gradually reduce activation and help the system settle.</p>
+          </div>
+
+          <div class="rhythm-card">
+            <h3>Recovery / After Stress</h3>
+            <p>For the period after stress, conflict, work pressure or emotional load. The goal is to help the system return from activation toward stability.</p>
+          </div>
+
+          <div class="rhythm-card">
+            <h3>Confidence & Social Ease</h3>
+            <p>For social situations where you want to feel more open, natural and steady. The goal is less self-pressure and more relaxed confidence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wide-card">
+        <div class="eyebrow">Recovery & Low Energy</div>
+        <h2>For low mood, deep fatigue, motivation and directed recovery work</h2>
+        <div class="rhythm-grid">
+          <div class="rhythm-card">
+            <h3>Low Mood Support</h3>
+            <p>For states of low inner energy, heaviness or reduced motivation. The goal is gentle support toward more stability and inner movement.</p>
+          </div>
+
+          <div class="rhythm-card">
+            <h3>Motivation Reset</h3>
+            <p>For moments when you feel stuck, passive or mentally blocked. The goal is to restart inner drive and make it easier to take the next step.</p>
+          </div>
+
+          <div class="rhythm-card">
+            <h3>Deep Fatigue Reset</h3>
+            <p>For moments of heavy tiredness, mental dullness or drained inner energy. The goal is to help the system move from exhaustion toward steadier activation.</p>
+          </div>
+
+          <div class="rhythm-card">
+            <h3>Deep Recovery Support</h3>
+            <p>For a meditative recovery state where you lie down, calm the system and use directed thoughts toward renewal, regeneration and return of inner strength.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wide-card">
+        <div class="eyebrow">Body Support</div>
+        <h2>For body awareness, discomfort support and self-regulation habits</h2>
+        <div class="rhythm-grid">
+          <div class="rhythm-card">
+            <h3>Pain Relief Support</h3>
+            <p>For directed attention and calming support during discomfort. The goal is not medical treatment, but a more regulated state around body tension and perception.</p>
+          </div>
+
+          <div class="rhythm-card">
+            <h3>Metabolic Balance Support</h3>
+            <p>For body-awareness sessions where the user wants to support balance, regulation and a steadier connection with physical state and daily rhythm.</p>
+          </div>
+
+          <div class="rhythm-card">
+            <h3>Weight Balance Support</h3>
+            <p>For body-awareness and self-regulation around habits, rhythm, appetite awareness and motivation. It is a support rhythm, not a medical or weight-loss treatment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wide-card">
+        <div class="eyebrow">Creativity, Sleep & Intimacy</div>
+        <h2>For inner imagery, closeness, evening transition and natural flow</h2>
+        <div class="rhythm-grid">
+          <div class="rhythm-card">
+            <h3>Creative Flow</h3>
+            <p>For writing, ideas, imagination, design, music, problem solving or any work that needs a more fluid inner state and less rigid thinking.</p>
+          </div>
+
+          <div class="rhythm-card">
+            <h3>Romantic / Intimacy</h3>
+            <p>For moments before a romantic meeting, a date, meeting a new girl, or situations where you want relaxed confidence and natural closeness.</p>
+          </div>
+
+          <div class="rhythm-card">
+            <h3>Sleep Preparation</h3>
+            <p>For evening transition, mental slowing down and preparation for sleep. The goal is to reduce inner activity and support a calmer pre-sleep state.</p>
+          </div>
+        </div>
       </div>
     </section>
 
