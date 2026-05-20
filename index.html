@@ -105,6 +105,26 @@
       filter: drop-shadow(0 0 10px rgba(57,168,255,0.45));
     }
 
+    .nav-menu-toggle {
+      display: none;
+    }
+
+    .hamburger-button {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid rgba(127, 211, 255, 0.24);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 0 16px rgba(57, 168, 255, 0.12);
+    }
+
     .nav-right {
       display: flex;
       align-items: center;
@@ -113,8 +133,7 @@
       flex-wrap: wrap;
     }
 
-    .nav-links,
-    .language-links {
+    .nav-links {
       display: flex;
       gap: 8px;
       align-items: center;
@@ -123,8 +142,7 @@
       color: var(--muted);
     }
 
-    .nav-links a,
-    .language-links a {
+    .nav-links a {
       padding: 6px 9px;
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.045);
@@ -132,17 +150,10 @@
     }
 
     .nav-links a:hover,
-    .nav-links .active,
-    .language-links a:hover,
-    .language-links .active-lang {
+    .nav-links .active {
       background: rgba(57, 168, 255, 0.16);
       border-color: rgba(127, 211, 255, 0.26);
       color: var(--text);
-    }
-
-    .language-links {
-      font-size: 12px;
-      white-space: nowrap;
     }
 
     .hero {
@@ -442,10 +453,11 @@
       }
 
       .nav-inner {
-        align-items: stretch;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
         gap: 10px;
-        padding: 12px 14px;
+        padding: 10px 14px;
       }
 
       .brand {
@@ -457,35 +469,32 @@
         height: 28px;
       }
 
+      .hamburger-button {
+        display: inline-flex;
+      }
+
       .nav-right {
-        display: block;
-      }
-
-      .nav-links,
-      .language-links {
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        overflow-x: auto;
-        gap: 8px;
-        padding-bottom: 5px;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-      }
-
-      .nav-links::-webkit-scrollbar,
-      .language-links::-webkit-scrollbar {
+        grid-column: 1 / -1;
         display: none;
       }
 
-      .nav-links a,
-      .language-links a {
-        flex: 0 0 auto;
-        font-size: 12px;
-        padding: 7px 10px;
+      .nav-menu-toggle:checked ~ .nav-right {
+        display: block;
       }
 
-      .language-links {
-        margin-top: 4px;
+      .nav-links {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 8px 0 2px;
+      }
+
+      .nav-links a {
+        display: block;
+        width: 100%;
+        font-size: 13px;
+        padding: 10px 12px;
+        border-radius: 14px;
       }
 
       .hero {
@@ -633,6 +642,9 @@
         <span>BrainRhythm ID</span>
       </a>
 
+      <input class="nav-menu-toggle" type="checkbox" id="nav-menu-toggle" aria-hidden="true" />
+      <label class="hamburger-button" for="nav-menu-toggle" aria-label="Open menu">☰</label>
+
       <div class="nav-right">
         <div class="nav-links">
           <a href="index.html" class="active">Home</a>
@@ -641,15 +653,6 @@
           <a href="situational-rhythms.html">Rhythms</a>
           <a href="special-states.html">Special States</a>
           <a href="full-version.html">Full Version</a>
-        </div>
-
-        <div class="language-links" aria-label="Language selector">
-          <span>🌐</span>
-          <a href="index.html" class="active-lang">EN</a>
-          <a href="hr.html">HR</a>
-          <a href="de.html">DE</a>
-          <a href="fr.html">FR</a>
-          <a href="es.html">ES</a>
         </div>
       </div>
     </div>
