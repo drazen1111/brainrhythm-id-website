@@ -26,6 +26,8 @@
       --border: rgba(127, 211, 255, 0.22);
       --border-strong: rgba(127, 211, 255, 0.42);
       --text: rgba(244, 248, 255, 0.94);
+      --text-title: rgba(226, 242, 255, 0.86);
+      --text-heading: rgba(235, 246, 255, 0.88);
       --muted: rgba(184, 198, 223, 0.86);
       --soft: #7fd3ff;
       --primary: #39a8ff;
@@ -56,9 +58,9 @@
       z-index: 0;
       background-image: url("brainrhythm_id_logo.png");
       background-repeat: no-repeat;
-      background-position: center 18%;
+      background-position: center 16%;
       background-size: min(82vw, 980px);
-      opacity: 0.022;
+      opacity: 0.038;
     }
 
     nav, header, main, footer {
@@ -103,6 +105,24 @@
       filter: drop-shadow(0 0 10px rgba(57,168,255,0.45));
     }
 
+    .nav-menu-toggle { display: none; }
+
+    .hamburger-button {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid rgba(127, 211, 255, 0.24);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 0 16px rgba(57, 168, 255, 0.12);
+    }
+
     .nav-right {
       display: flex;
       align-items: center;
@@ -111,8 +131,7 @@
       flex-wrap: wrap;
     }
 
-    .nav-links,
-    .language-links {
+    .nav-links {
       display: flex;
       gap: 8px;
       align-items: center;
@@ -121,8 +140,7 @@
       color: var(--muted);
     }
 
-    .nav-links a,
-    .language-links a {
+    .nav-links a {
       padding: 6px 9px;
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.045);
@@ -130,23 +148,16 @@
     }
 
     .nav-links a:hover,
-    .nav-links .active,
-    .language-links a:hover,
-    .language-links .active-lang {
+    .nav-links .active {
       background: rgba(57, 168, 255, 0.16);
       border-color: rgba(127, 211, 255, 0.26);
       color: var(--text);
     }
 
-    .language-links {
-      font-size: 12px;
-      white-space: nowrap;
-    }
-
     .hero {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 58px 22px 30px;
+      padding: 54px 22px 32px;
       text-align: center;
     }
 
@@ -166,48 +177,48 @@
     }
 
     .kicker-logo {
-      width: 38px;
-      height: 38px;
+      width: 36px;
+      height: 36px;
       object-fit: contain;
       filter: drop-shadow(0 0 12px rgba(57, 168, 255, 0.45));
     }
 
     h1 {
       margin: 0 auto 16px;
-      font-size: clamp(34px, 4.4vw, 52px);
+      font-size: clamp(34px, 4.35vw, 50px);
       line-height: 1.02;
-      letter-spacing: -1.2px;
+      letter-spacing: -1.1px;
       max-width: 980px;
-      color: rgba(226, 242, 255, 0.86);
-      text-shadow: 0 1px 2px rgba(0,0,0,0.45), 0 0 18px rgba(57,168,255,0.16), 0 8px 28px rgba(157,123,255,0.10);
+      color: var(--text-title);
+      text-shadow:
+        0 2px 3px rgba(0, 0, 0, 0.58),
+        0 0 14px rgba(57, 168, 255, 0.24),
+        0 0 30px rgba(157, 123, 255, 0.16);
     }
 
     .lead {
       margin: 0 auto 14px;
-      font-size: clamp(17.5px, 2vw, 22px);
-      line-height: 1.35;
+      font-size: clamp(17px, 1.9vw, 21px);
+      line-height: 1.32;
       color: rgba(232, 243, 255, 0.86);
-      font-weight: 660;
+      font-weight: 650;
       max-width: 860px;
-      text-shadow: 0 1px 1px rgba(0,0,0,0.35), 0 8px 24px rgba(57,168,255,0.12);
+      text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.45),
+        0 0 16px rgba(57, 168, 255, 0.12);
     }
 
     .sub {
       margin: 0 auto;
       color: var(--muted);
-      font-size: 16px;
+      font-size: 15.5px;
       max-width: 900px;
     }
 
     section {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 34px 22px;
-    }
-
-    .section-heading {
-      margin-bottom: 20px;
-      max-width: 850px;
+      padding: 36px 22px;
     }
 
     .eyebrow {
@@ -220,20 +231,25 @@
     }
 
     h2 {
-      margin: 0 0 14px;
-      font-size: 22px;
+      margin: 0 0 12px;
+      font-size: 19px;
       line-height: 1.18;
-      letter-spacing: -0.25px;
-      color: rgba(235, 246, 255, 0.88);
-      text-shadow: 0 1px 2px rgba(0,0,0,0.38), 0 0 14px rgba(57,168,255,0.11);
+      letter-spacing: -0.2px;
+      color: var(--text-heading);
+      text-shadow:
+        0 2px 3px rgba(0, 0, 0, 0.48),
+        0 0 12px rgba(57, 168, 255, 0.22),
+        0 0 24px rgba(157, 123, 255, 0.12);
     }
 
     h3 {
       margin: 0 0 10px;
-      font-size: 20px;
+      font-size: 18px;
       line-height: 1.24;
-      color: rgba(255, 255, 255, 0.89);
-      text-shadow: 0 1px 2px rgba(0,0,0,0.35), 0 0 14px rgba(57,168,255,0.10);
+      color: var(--text-heading);
+      text-shadow:
+        0 2px 3px rgba(0, 0, 0, 0.46),
+        0 0 12px rgba(57, 168, 255, 0.18);
     }
 
     p {
@@ -245,8 +261,10 @@
     .wide-card {
       border-radius: 30px;
       border: 1px solid var(--border-strong);
-      background: linear-gradient(145deg, rgba(57, 168, 255, 0.12), rgba(157, 123, 255, 0.08));
-      padding: 26px;
+      background:
+        radial-gradient(circle at 15% 0%, rgba(127, 211, 255, 0.15), transparent 12rem),
+        linear-gradient(145deg, rgba(57, 168, 255, 0.12), rgba(157, 123, 255, 0.07));
+      padding: 24px;
       box-shadow: 0 22px 60px rgba(0, 0, 0, 0.20);
     }
 
@@ -327,9 +345,7 @@
     }
 
     @media (max-width: 900px) {
-      .mode-grid {
-        grid-template-columns: 1fr;
-      }
+      .mode-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 640px) {
@@ -338,59 +354,49 @@
       body::before {
         background-size: 120vw;
         background-position: center 10%;
-        opacity: 0.020;
+        opacity: 0.030;
       }
 
       .nav-inner {
-        align-items: stretch;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
         gap: 10px;
-        padding: 12px 14px;
+        padding: 10px 14px;
       }
 
-      .brand {
-        font-size: 15px;
-      }
+      .brand { font-size: 15px; }
 
       .brand-logo {
         width: 28px;
         height: 28px;
       }
 
+      .hamburger-button { display: inline-flex; }
+
       .nav-right {
-        display: block;
-      }
-
-      .nav-links,
-      .language-links {
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        overflow-x: auto;
-        gap: 8px;
-        padding-bottom: 5px;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-      }
-
-      .nav-links::-webkit-scrollbar,
-      .language-links::-webkit-scrollbar {
+        grid-column: 1 / -1;
         display: none;
       }
 
-      .nav-links a,
-      .language-links a {
-        flex: 0 0 auto;
-        font-size: 12px;
-        padding: 7px 10px;
+      .nav-menu-toggle:checked ~ .nav-right { display: block; }
+
+      .nav-links {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 8px 0 2px;
       }
 
-      .language-links {
-        margin-top: 4px;
+      .nav-links a {
+        display: block;
+        width: 100%;
+        font-size: 13px;
+        padding: 10px 12px;
+        border-radius: 14px;
       }
 
-      .hero {
-        padding: 30px 16px 22px;
-      }
+      .hero { padding: 30px 16px 22px; }
 
       .kicker {
         font-size: 12px;
@@ -404,14 +410,15 @@
       }
 
       h1 {
-        font-size: 31px;
-        letter-spacing: -0.6px;
+        font-size: 33px;
+        letter-spacing: -0.7px;
         margin-bottom: 12px;
       }
 
       .lead {
-        font-size: 17px;
-        line-height: 1.3;
+        font-size: 16.5px;
+        line-height: 1.28;
+        margin-bottom: 12px;
       }
 
       .sub {
@@ -419,21 +426,21 @@
         line-height: 1.52;
       }
 
-      section {
-        padding: 28px 16px;
+      section { padding: 28px 16px; }
+
+      .eyebrow {
+        font-size: 11px;
+        letter-spacing: 1.3px;
       }
 
       h2 {
-        font-size: 19px;
+        font-size: 17px;
+        letter-spacing: -0.15px;
+        line-height: 1.18;
       }
 
-      h3 {
-        font-size: 18px;
-      }
-
-      p {
-        font-size: 14.5px;
-      }
+      h3 { font-size: 17px; }
+      p { font-size: 14.5px; }
 
       .wide-card,
       .mode-card {
@@ -441,17 +448,27 @@
         border-radius: 24px;
       }
 
-      .tag-row span {
-        font-size: 12px;
-      }
+      .tag-row span { font-size: 12px; }
 
       .button-row {
         flex-direction: column;
+        gap: 10px;
       }
 
       .button {
         width: 100%;
+        padding: 13px 16px;
       }
+    }
+
+    @media (max-width: 380px) {
+      h1 {
+        font-size: 30px;
+        color: rgba(226, 242, 255, 0.85);
+      }
+
+      h2 { font-size: 16px; }
+      .lead { font-size: 16px; }
     }
   </style>
 </head>
@@ -464,6 +481,9 @@
         <span>BrainRhythm ID</span>
       </a>
 
+      <input class="nav-menu-toggle" type="checkbox" id="nav-menu-toggle" aria-hidden="true" />
+      <label class="hamburger-button" for="nav-menu-toggle" aria-label="Open menu">☰</label>
+
       <div class="nav-right">
         <div class="nav-links">
           <a href="index.html">Home</a>
@@ -472,15 +492,6 @@
           <a href="situational-rhythms.html">Rhythms</a>
           <a href="special-states.html" class="active">Special States</a>
           <a href="full-version.html">Full Version</a>
-        </div>
-
-        <div class="language-links" aria-label="Language selector">
-          <span>🌐</span>
-          <a href="special-states.html" class="active-lang">EN</a>
-          <a href="hr.html">HR</a>
-          <a href="de.html">DE</a>
-          <a href="fr.html">FR</a>
-          <a href="es.html">ES</a>
         </div>
       </div>
     </div>
