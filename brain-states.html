@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Alpha, Beta, Theta, Delta and REM-like States | BrainRhythm ID</title>
+  <meta name="description" content="Learn how BrainRhythm ID works with alpha, beta, theta, delta and REM-like rhythm states as the foundation for personalized brain rhythm sessions." />
+  <meta name="keywords" content="alpha rhythm, beta rhythm, theta rhythm, delta rhythm, REM-like state, brain rhythms, BrainRhythm ID, personalized rhythms" />
+  <meta name="author" content="BrainRhythm ID" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:title" content="Alpha, Beta, Theta, Delta and REM-like States" />
+  <meta property="og:description" content="BrainRhythm ID uses rhythm states as a foundation for personalized mental-state guidance." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://drazen1111.github.io/brainrhythm-id-website/brain-states.html" />
+
+  <link rel="canonical" href="https://drazen1111.github.io/brainrhythm-id-website/brain-states.html" />
+
+  <style>
+    :root {
+      --bg-top: #020817;
+      --bg-mid: #07122d;
+      --bg-bottom: #0b1f4d;
+      --card: rgba(255, 255, 255, 0.075);
+      --border: rgba(127, 211, 255, 0.22);
+      --border-strong: rgba(127, 211, 255, 0.42);
+      --text: rgba(244, 248, 255, 0.94);
+      --muted: rgba(184, 198, 223, 0.86);
+      --soft: #7fd3ff;
+      --primary: #39a8ff;
+      --accent: #9d7bff;
+      --max-width: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(57, 168, 255, 0.20), transparent 34rem),
+        radial-gradient(circle at 82% 8%, rgba(157, 123, 255, 0.22), transparent 28rem),
+        linear-gradient(180deg, var(--bg-top), var(--bg-mid) 45%, var(--bg-bottom));
+      min-height: 100vh;
+      line-height: 1.62;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image: url("brainrhythm_id_logo.png");
+      background-repeat: no-repeat;
+      background-position: center 18%;
+      background-size: min(82vw, 980px);
+      opacity: 0.022;
+    }
+
+    nav, header, main, footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      background: rgba(2, 8, 23, 0.74);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 12px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 850;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 10px rgba(57,168,255,0.45));
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links,
+    .language-links {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .nav-links a,
+    .language-links a {
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-links a:hover,
+    .nav-links .active,
+    .language-links a:hover,
+    .language-links .active-lang {
+      background: rgba(57, 168, 255, 0.16);
+      border-color: rgba(127, 211, 255, 0.26);
+      color: var(--text);
+    }
+
+    .language-links {
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .hero {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 58px 22px 30px;
+      text-align: center;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 8px 12px 8px 16px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--soft);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .kicker-logo {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 12px rgba(57, 168, 255, 0.45));
+    }
+
+    h1 {
+      margin: 0 auto 16px;
+      font-size: clamp(34px, 4.4vw, 52px);
+      line-height: 1.02;
+      letter-spacing: -1.2px;
+      max-width: 980px;
+      color: rgba(226, 242, 255, 0.86);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.45), 0 0 18px rgba(57,168,255,0.16), 0 8px 28px rgba(157,123,255,0.10);
+    }
+
+    .lead {
+      margin: 0 auto 14px;
+      font-size: clamp(17.5px, 2vw, 22px);
+      line-height: 1.35;
+      color: rgba(232, 243, 255, 0.86);
+      font-weight: 660;
+      max-width: 840px;
+      text-shadow: 0 1px 1px rgba(0,0,0,0.35), 0 8px 24px rgba(57,168,255,0.12);
+    }
+
+    .sub {
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 880px;
+    }
+
+    section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 34px 22px;
+    }
+
+    .section-heading {
+      margin-bottom: 20px;
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      color: var(--soft);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 850;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 22px;
+      line-height: 1.18;
+      letter-spacing: -0.25px;
+      color: rgba(235, 246, 255, 0.88);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.38), 0 0 14px rgba(57,168,255,0.11);
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      line-height: 1.24;
+      color: rgba(255, 255, 255, 0.89);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.35), 0 0 14px rgba(57,168,255,0.10);
+    }
+
+    p {
+      color: var(--muted);
+      margin: 0 0 14px;
+      font-size: 15.5px;
+    }
+
+    .wide-card {
+      border-radius: 30px;
+      border: 1px solid var(--border-strong);
+      background: linear-gradient(145deg, rgba(57, 168, 255, 0.12), rgba(157, 123, 255, 0.08));
+      padding: 26px;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.20);
+    }
+
+    .states-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .state-card {
+      border-radius: 28px;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at 15% 0%, rgba(127, 211, 255, 0.12), transparent 12rem),
+        rgba(255, 255, 255, 0.075);
+      padding: 24px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+    }
+
+    .state-card strong {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      color: var(--soft);
+      border: 1px solid rgba(127, 211, 255, 0.24);
+      background: rgba(57, 168, 255, 0.10);
+      font-size: 12px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      font-weight: 850;
+      box-shadow: 0 18px 42px rgba(57, 168, 255, 0.28);
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border);
+      box-shadow: none;
+      color: var(--text);
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 28px 22px 42px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .states-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body { line-height: 1.55; }
+
+      body::before {
+        background-size: 120vw;
+        background-position: center 10%;
+        opacity: 0.020;
+      }
+
+      .nav-inner {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 14px;
+      }
+
+      .brand {
+        font-size: 15px;
+      }
+
+      .brand-logo {
+        width: 28px;
+        height: 28px;
+      }
+
+      .nav-right {
+        display: block;
+      }
+
+      .nav-links,
+      .language-links {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 5px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .nav-links::-webkit-scrollbar,
+      .language-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-links a,
+      .language-links a {
+        flex: 0 0 auto;
+        font-size: 12px;
+        padding: 7px 10px;
+      }
+
+      .language-links {
+        margin-top: 4px;
+      }
+
+      .hero {
+        padding: 30px 16px 22px;
+      }
+
+      .kicker {
+        font-size: 12px;
+        margin-bottom: 14px;
+        padding: 7px 10px 7px 13px;
+      }
+
+      .kicker-logo {
+        width: 30px;
+        height: 30px;
+      }
+
+      h1 {
+        font-size: 31px;
+        letter-spacing: -0.6px;
+        margin-bottom: 12px;
+      }
+
+      .lead {
+        font-size: 17px;
+        line-height: 1.3;
+      }
+
+      .sub {
+        font-size: 15px;
+        line-height: 1.52;
+      }
+
+      section {
+        padding: 28px 16px;
+      }
+
+      h2 {
+        font-size: 19px;
+      }
+
+      h3 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 14.5px;
+      }
+
+      .wide-card,
+      .state-card {
+        padding: 20px;
+        border-radius: 24px;
+      }
+
+      .button-row {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="BrainRhythm ID home">
+        <img class="brand-logo" src="brainrhythm_id_logo.png" alt="" />
+        <span>BrainRhythm ID</span>
+      </a>
+
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="brainrhythm-id.html">Your ID</a>
+          <a href="brain-states.html" class="active">Brain States</a>
+          <a href="situational-rhythms.html">Rhythms</a>
+          <a href="special-states.html">Special States</a>
+          <a href="full-version.html">Full Version</a>
+        </div>
+
+        <div class="language-links" aria-label="Language selector">
+          <span>🌐</span>
+          <a href="brain-states.html" class="active-lang">EN</a>
+          <a href="hr.html">HR</a>
+          <a href="de.html">DE</a>
+          <a href="fr.html">FR</a>
+          <a href="es.html">ES</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="kicker">Brain rhythm states <img class="kicker-logo" src="brainrhythm_id_logo.png" alt="" /></div>
+    <h1>Alpha, Beta, Theta, Delta and REM-like States</h1>
+    <p class="lead">BrainRhythm ID is built around rhythm states that can support different forms of calm, focus, rest, inner processing and mental activation.</p>
+    <p class="sub">The goal is not to label everyone the same way. The goal is to discover which rhythm profile fits your own response.</p>
+  </header>
+
+  <main>
+    <section>
+      <div class="wide-card">
+        <div class="eyebrow">Foundation</div>
+        <h2>Brain states are the base. Your personal ID makes them usable.</h2>
+        <p>Alpha, beta, theta, delta and REM-like rhythm states are different directions of mental activity. Some are more connected with calm and stability. Some are more connected with focus, activation, imagery, deep rest or inner processing.</p>
+        <p>BrainRhythm ID uses these states as a foundation, but it does not treat them as one-size-fits-all sounds. Your personal scan helps create a rhythm profile that can later be used for personalized sessions.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <div class="eyebrow">Core rhythm states</div>
+        <h2>The main rhythm directions used by the app</h2>
+      </div>
+
+      <div class="states-grid">
+        <div class="state-card">
+          <strong>Alpha</strong>
+          <h3>Calm clarity and relaxed awareness</h3>
+          <p>Alpha rhythms are often connected with a calmer, more balanced state of awareness. In practical use, this direction can support relaxation without complete shutdown, quiet focus, emotional softening and a more stable inner state.</p>
+        </div>
+
+        <div class="state-card">
+          <strong>Beta</strong>
+          <h3>Focus, action and mental activation</h3>
+          <p>Beta rhythms are connected with alertness, active thinking and task engagement. In BrainRhythm ID, this direction can be used when the goal is to prepare for focus, performance, study, communication or action.</p>
+        </div>
+
+        <div class="state-card">
+          <strong>Theta</strong>
+          <h3>Inner processing, imagery and deeper reflection</h3>
+          <p>Theta rhythms are connected with deeper internal attention, imagination, emotional processing and meditative states. This direction can support creative flow, inner work, symbolic thinking and transition away from outer pressure.</p>
+        </div>
+
+        <div class="state-card">
+          <strong>Delta</strong>
+          <h3>Deep rest and regenerative slowing down</h3>
+          <p>Delta rhythms are associated with deep rest and very slow rhythm states. In the app, this direction is used for deep calming, sleep preparation and a state of reduced mental activity where the system can settle more deeply.</p>
+        </div>
+
+        <div class="state-card">
+          <strong>REM-like</strong>
+          <h3>Dream-like processing and subconscious material</h3>
+          <p>REM-like rhythm work is connected with imagery, symbolic thinking, emotional processing and deeper contact with subconscious content. It may feel activating for some users, so it is not recommended immediately before sleep if it increases mental activity.</p>
+        </div>
+
+        <div class="state-card">
+          <strong>Personal ID</strong>
+          <h3>Your own response matters</h3>
+          <p>The same rhythm direction may feel different from person to person. This is why BrainRhythm ID first builds your personal rhythm profile and then uses that profile as a base for situational rhythms.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wide-card">
+        <div class="eyebrow">Why this matters</div>
+        <h2>The app connects brain states with real-life situations.</h2>
+        <p>The rhythm states are not isolated theory. They become useful when they are connected with real moments: preparing for a meeting, calming down after stress, focusing before study, supporting sleep preparation, entering creative flow or using directed thoughts during deep recovery work.</p>
+        <p>This is where your BrainRhythm ID becomes important. It gives the app a personal rhythm base instead of using only generic presets.</p>
+        <div class="button-row">
+          <a class="button" href="situational-rhythms.html">Explore situational rhythms</a>
+          <a class="button secondary" href="brainrhythm-id.html">Back to Your ID</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© BrainRhythm ID. All rights reserved. BrainRhythm ID is a wellness and self-regulation app, not a medical treatment.</p>
+  </footer>
+</body>
+</html>
