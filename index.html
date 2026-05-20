@@ -338,11 +338,32 @@
       gap: 18px;
     }
 
+    .mini-section,
+    .download-box {
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .mini-section:hover,
+    .download-box:hover {
+      transform: translateY(-4px);
+      border-color: rgba(127, 211, 255, 0.72);
+      background:
+        radial-gradient(circle at 15% 0%, rgba(127, 211, 255, 0.20), transparent 12rem),
+        linear-gradient(145deg, rgba(57, 168, 255, 0.12), rgba(157, 123, 255, 0.07));
+    }
+
     .mini-section {
+      display: block;
       border-radius: 28px;
       border: 1px solid var(--border);
       background: var(--card);
       padding: 24px;
+      cursor: pointer;
+    }
+
+    .download-box {
+      display: block;
+      cursor: pointer;
     }
 
     .button-row {
@@ -693,35 +714,35 @@
 
     <section>
       <div class="mini-section-grid">
-        <div class="mini-section">
+        <a class="mini-section" href="brainrhythm-id.html">
           <div class="eyebrow">Personalized rhythms</div>
           <h3>Not one generic sound for everyone.</h3>
           <p>BrainRhythm ID uses your personal profile to create rhythm sessions for specific mental states and real-life situations.</p>
           <div class="button-row">
-            <a class="button secondary" href="brainrhythm-id.html">Understand your ID</a>
+            <span class="button secondary">Understand your ID</span>
           </div>
-        </div>
+        </a>
 
-        <div class="mini-section">
+        <a class="mini-section" href="situational-rhythms.html">
           <div class="eyebrow">Real-life use</div>
           <h3>Use your ID when you need a specific state.</h3>
           <p>Situational rhythms help you work with focus, stress, emotional balance, low energy, sports preparation, sleep and inner processing.</p>
           <div class="button-row">
-            <a class="button secondary" href="situational-rhythms.html">View rhythm categories</a>
+            <span class="button secondary">View rhythm categories</span>
           </div>
-        </div>
+        </a>
       </div>
     </section>
 
     <section>
-      <div class="download-box">
+      <a class="download-box" href="https://play.google.com/store/apps/details?id=com.brainrhythmid.app" target="_blank" rel="noopener noreferrer">
         <div class="eyebrow">Download the app</div>
         <h2>Discover your personal BrainRhythm ID.</h2>
         <p>Use your personal brain rhythm profile to create rhythm sessions for real-life mental states.</p>
         <div class="button-row" style="justify-content:center">
-          <a class="button" href="https://play.google.com/store/apps/details?id=com.brainrhythmid.app" target="_blank" rel="noopener noreferrer">Open on Google Play</a>
+          <span class="button">Open on Google Play</span>
         </div>
-      </div>
+      </a>
     </section>
   </main>
 
